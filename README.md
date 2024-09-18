@@ -71,3 +71,22 @@ export default tseslint.config({
 
 - Form submission and displaying the values in an alert.
 - ![Form Submision](https://github.com/user-attachments/assets/a1020a8b-079e-4835-b98b-d044b1cdb558)
+
+
+
+To Run this Application 
+
+- Clone the Repository:
+Open a terminal or command prompt.
+Run the command: git clone https://github.com/username/repository.git Replace username and repository with the appropriate GitHub username and repository name.
+
+- Navigate to the Project Directory:
+Change to the project directory: cd repository
+
+- Install Dependencies:
+Run: npm install to install the project's dependencies.
+
+
+- Run the Application:
+Start the application with: npm run dev
+
