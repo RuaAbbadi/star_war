@@ -52,7 +52,7 @@ export default tseslint.config({
 ```
 
 - Star war characteristics table fetching data from https://swapi.dev/api/people api showing characteristics like name, gender, height and eye color using material UI 
-and handling the pagination in the best way.  
+and handling the pagination in the best way by fetching the data in chunks and contrlling how much data is displayed on each page.  
 
 ![star_war_table](https://github.com/user-attachments/assets/89ee5aef-1772-48b9-af9b-7ea3f38c9809)
 
