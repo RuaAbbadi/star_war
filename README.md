@@ -66,7 +66,7 @@ export default tseslint.config({
 -  Patient  Form 
 ![form](https://github.com/user-attachments/assets/7fb26018-c51f-4123-9c82-ff1e11ff5750)
 
- - Form Validatiom 
+ - Form Validation 
 ![from validation](https://github.com/user-attachments/assets/02fc2505-1b8e-48f3-b667-fd5a255a55ba)
 
 - Form Submision 
