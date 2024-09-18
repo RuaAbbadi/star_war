@@ -50,3 +50,34 @@ export default tseslint.config({
   },
 })
 ```
+
+- Star war characteristics table fetching data from https://swapi.dev/api/people api showing characteristics like name, gender, height and eye color using material UI 
+and handling the pagination in the best way by fetching the data in chunks and controlling how much data is displayed on each page.  
+
+![star_war_table](https://github.com/user-attachments/assets/89ee5aef-1772-48b9-af9b-7ea3f38c9809)
+
+
+-Allow the user to search for a name 
+![search](https://github.com/user-attachments/assets/f94021ee-707b-42b0-ad04-954caf1eb343)
+
+
+- Having fun changing the theme 
+![change_theme](https://github.com/user-attachments/assets/967e0b22-dc56-45e2-aecb-263baa6c2c70)
+
+-  Patient Form 
+![form](https://github.com/user-attachments/assets/7fb26018-c51f-4123-9c82-ff1e11ff5750)
+
+ - Form Validation 
+![from validation](https://github.com/user-attachments/assets/02fc2505-1b8e-48f3-b667-fd5a255a55ba)
+
+- Form Submision 
+- ![Form Submision](https://github.com/user-attachments/assets/a1020a8b-079e-4835-b98b-d044b1cdb558)
+
+
+
+
+
+
+
+
+
