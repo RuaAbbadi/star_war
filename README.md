@@ -50,3 +50,8 @@ export default tseslint.config({
   },
 })
 ```
+
+--- star war characteristics
+
+![star_war_table](https://github.com/user-attachments/assets/89ee5aef-1772-48b9-af9b-7ea3f38c9809)
+
