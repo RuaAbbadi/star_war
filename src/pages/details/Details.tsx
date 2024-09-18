@@ -221,8 +221,8 @@ const AddPatientForm = () => {
                   Boolean(formik.errors.workspaceTemplate?.[index])
                 }
               >
-                <MenuItem value="Template1">Template1</MenuItem>
-                <MenuItem value="Template2">Template2</MenuItem>
+                <MenuItem value="Template1">Workspace1</MenuItem>
+                <MenuItem value="Template2">Workspace2</MenuItem>
               </Select>
               {formik.touched.workspaceTemplate &&
                 formik.touched.workspaceTemplate[index] &&
