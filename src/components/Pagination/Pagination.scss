@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 8px;
+  overflow-x: auto;
+
+  .MuiButtonBase-root {
+    background-color: pink;
+    width: 10%;
+  }
+  .MuiTypography-body1 {
+    margin: 1rem;
+  }
+
+  .MuiButton-outlined {
+    min-width: 36px;
+    padding: 6px 12px;
+    margin: 0 4px;
+  }
+
+
+.pagination-button.active {
+    border-color: black;
+  }
+  
+  .pagination-button:disabled {
+    border-color: #c5c5c5;
+    color: #c5c5c5; 
+  }
+}
