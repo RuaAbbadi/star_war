@@ -15,7 +15,7 @@ import {
   Checkbox,
   FormGroup,
 } from "@mui/material";
-import "../details/Details.scss";
+import "../PatientForm/PatientForm.scss";
 import { DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -39,7 +39,7 @@ const DISORDER_VALUES = [
   "Other",
 ];
 
-const AddPatientForm = () => {
+const PatientForm = () => {
   const [workspaces, setWorkspaces] = useState([""]);
 
   const formik = useFormik<FormValues>({
@@ -263,4 +263,4 @@ const AddPatientForm = () => {
   );
 };
 
-export default AddPatientForm;
+export default PatientForm;

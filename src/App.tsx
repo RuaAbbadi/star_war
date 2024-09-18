@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import StarWarsTable from "./pages/starWarTable/StarWarsTable.tsx";
-import Details from "./pages/details/Details.tsx";
+import PatientForm from "./pages/PatientForm/PatientForm.tsx";
 import './App.css'
 function App() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -54,8 +54,8 @@ function App() {
               <ListItem component={Link} to="/">
                 <ListItemText primary="Start Wars Characters"></ListItemText>
               </ListItem>
-              <ListItem component={Link} to="/details">
-                <ListItemText primary="Details Page"></ListItemText>
+              <ListItem component={Link} to="/patient-form">
+                <ListItemText primary="Patient Form"></ListItemText>
               </ListItem>
             </List>
           </div>
@@ -63,7 +63,7 @@ function App() {
         <main style={{ flexGrow: 1, padding: "20px", marginTop: "64px" }}>
           <Routes>
             <Route path="/" element={<StarWarsTable />}></Route>
-            <Route path="/details" element={<Details />}></Route>
+            <Route path="/patient-form" element={<PatientForm />}></Route>
           </Routes>
         </main>
       </div>

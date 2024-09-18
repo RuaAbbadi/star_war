@@ -8,11 +8,13 @@ import {
   TableRow,
   TextField,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import "../starWarTable/StarWars.scss";
 import { useDebounce } from "../../utils/hooks";
 import EmptyStatus from "../../components/EmptyStatus/EmptyStatus";
 import { fetchPeople, fetchPeopleBySearch } from "../../api/api";
+import DetailsModal from "../detailsModal/Details";
+import PersonDetails from "../detailsModal/Details";
+import { boolean } from "yup";
 
 interface Person {
   name: string;
@@ -33,9 +35,10 @@ const StarWarsTable: React.FC = () => {
   const [theme, setTheme] = useState<string>(PRIMARY_COLOR);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const recordsPerPage = 3;
-  const navigate = useNavigate();
   const debouncedSearchQuery = useDebounce(searchQuery, 500);
   const [error, setError] = useState<string | null>("");
+  const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
+  const [showPersonDetails, setShowPersonDetails] = useState<boolean>(false);
 
   const loadPeople = async (page: number) => {
     setLoading(true);
@@ -95,10 +98,6 @@ const StarWarsTable: React.FC = () => {
     setSearchQuery(e.target.value);
   };
 
-  const handleNavigation = () => {
-    navigate("/details");
-  };
-
   const handleTheme = () => {
     setTheme((prevTheme: string) =>
       prevTheme === PRIMARY_COLOR ? SECONDARY_COLOR : PRIMARY_COLOR
@@ -107,67 +106,80 @@ const StarWarsTable: React.FC = () => {
 
   return (
     <div className="star-war-page">
-      <h2 className="star-war-header" onClick={handleTheme}>
-        Star Wars
-      </h2>
-      <div className="search-container">
-        <div className="search-label" style={{ backgroundColor: theme }}>
-          <span>Search by name:</span>
-        </div>
-
-        <TextField
-          variant="outlined"
-          className="search-field"
-          fullWidth
-          value={searchQuery}
-          onChange={handleSearch}
+      {showPersonDetails ? (
+        <PersonDetails
+          person={selectedPerson}
+          handleBack={() => setShowPersonDetails(false)}
         />
-      </div>
-
-      {loading ? (
-        <CircularProgress />
-      ) : error ? (
-        <div className="error-message">{error}</div>
-      ) : debouncedSearchQuery && people.length === 0 ? (
-        <EmptyStatus />
       ) : (
-        <table>
-          <thead>
-            <TableRow style={{ backgroundColor: theme }}>
-              <TableCell>Name</TableCell>
-              <TableCell>Gender</TableCell>
-              <TableCell>Height</TableCell>
-              <TableCell>Eye Color</TableCell>
-              <TableCell></TableCell>
-            </TableRow>
-          </thead>
-          <tbody>
-            {getPaginatedData().map((person, index) => (
-              <TableRow key={index}>
-                <TableCell>{person.name}</TableCell>
-                <TableCell>{person.gender}</TableCell>
-                <TableCell>{person.height}</TableCell>
-                <TableCell>{person.eye_color}</TableCell>
-                <TableCell>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNavigation}
-                  >
-                    Details
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </tbody>
-        </table>
+        <>
+          <h2 className="star-war-header" onClick={handleTheme}>
+            Star Wars
+          </h2>
+          <div className="search-container">
+            <div className="search-label" style={{ backgroundColor: theme }}>
+              <span>Search by name:</span>
+            </div>
+            <TextField
+              variant="outlined"
+              className="search-field"
+              fullWidth
+              value={searchQuery}
+              onChange={handleSearch}
+            />
+          </div>
+
+          {loading ? (
+            <div className="circular-progress">
+              <CircularProgress />
+            </div>
+          ) : error ? (
+            <div className="error-message">{error}</div>
+          ) : debouncedSearchQuery && people.length === 0 ? (
+            <EmptyStatus />
+          ) : (
+            <table>
+              <thead>
+                <TableRow style={{ backgroundColor: theme }}>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Gender</TableCell>
+                  <TableCell>Height</TableCell>
+                  <TableCell>Eye Color</TableCell>
+                  <TableCell></TableCell>
+                </TableRow>
+              </thead>
+              <tbody>
+                {getPaginatedData().map((person, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{person.name}</TableCell>
+                    <TableCell>{person.gender}</TableCell>
+                    <TableCell>{person.height}</TableCell>
+                    <TableCell>{person.eye_color}</TableCell>
+                    <TableCell>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => {
+                          setShowPersonDetails(true);
+                          setSelectedPerson(person);
+                        }}
+                      >
+                        Details
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </tbody>
+            </table>
+          )}
+          <Pagination
+            currentPage={currentPage}
+            totalRecords={totalRecords}
+            recordsPerPage={recordsPerPage}
+            onPageChange={handlePageChange}
+          />
+        </>
       )}
-      <Pagination
-        currentPage={currentPage}
-        totalRecords={totalRecords}
-        recordsPerPage={recordsPerPage}
-        onPageChange={handlePageChange}
-      />
     </div>
   );
 };
