@@ -63,7 +63,11 @@ export default tseslint.config({
 - Have fun changing the theme by clicking on 'Star Wars'.
 ![change_theme](https://github.com/user-attachments/assets/967e0b22-dc56-45e2-aecb-263baa6c2c70)
 
--  Patient Form, which can be accessed from the sidebar and by clicking the 'Details' button in the Star Wars table.
+- Preview person details by clicking the 'Details' button in the Star Wars table.
+![person details page](https://github.com/user-attachments/assets/e8df8383-5d96-4145-b3a7-a2a4f629c6be)
+
+
+-  Patient Form, which can be accessed from the sidebar.
 ![form](https://github.com/user-attachments/assets/7fb26018-c51f-4123-9c82-ff1e11ff5750)
 
  - Form Validation 
