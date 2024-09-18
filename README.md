@@ -71,7 +71,10 @@ export default tseslint.config({
 
 - Form submission and displaying the values in an alert.
 - ![Form Submision](https://github.com/user-attachments/assets/a1020a8b-079e-4835-b98b-d044b1cdb558)
-To Run this Application 
+
+
+
+ To Run this Application 
 
 - Clone the Repository:
 Open a terminal or command prompt.
