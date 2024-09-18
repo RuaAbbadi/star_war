@@ -71,4 +71,3 @@ export default tseslint.config({
 
 - Form submission and displaying the values in an alert.
 - ![Form Submision](https://github.com/user-attachments/assets/a1020a8b-079e-4835-b98b-d044b1cdb558)
-
