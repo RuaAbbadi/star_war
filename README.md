@@ -64,7 +64,7 @@ export default tseslint.config({
 ![change_theme](https://github.com/user-attachments/assets/967e0b22-dc56-45e2-aecb-263baa6c2c70)
 
 - Preview person details by clicking the 'Details' button in the Star Wars table.
-![person details page](https://github.com/user-attachments/assets/e8df8383-5d96-4145-b3a7-a2a4f629c6be)
+![person details page](https://github.com/user-attachments/assets/cafbca3b-c9bc-42b7-b565-a679c7484796)
 
 
 -  Patient Form, which can be accessed from the sidebar.
